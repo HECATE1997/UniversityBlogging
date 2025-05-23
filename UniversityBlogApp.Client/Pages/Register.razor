@@ -1,0 +1,33 @@
+﻿@page "/register"
+@using UniversityBlogApp.Client.Models
+@using UniversityBlogApp.Client.Services
+@inject AuthService AuthService
+@inject NavigationManager Nav
+
+<h3>Register</h3>
+
+<EditForm Model="@register" OnValidSubmit="SubmitRegister">
+    <InputText @bind-Value="register.FullName" placeholder="Full Name" class="form-control" />
+    <InputText @bind-Value="register.Email" placeholder="Email" class="form-control" />
+    <InputText @bind-Value="register.Password" placeholder="Password" type="password" class="form-control" />
+    <button class="btn btn-success" type="submit">Register</button>
+</EditForm>
+
+@if (error != null)
+{
+    <div class="text-danger">@error</div>
+}
+
+@code {
+    private RegisterDto register = new();
+    private string? error;
+
+    private async Task SubmitRegister()
+    {
+        var success = await AuthService.Register(register);
+        if (success)
+            Nav.NavigateTo("/login");
+        else
+            error = "Registration failed.";
+    }
+}

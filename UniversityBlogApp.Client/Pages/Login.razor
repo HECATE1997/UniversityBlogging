@@ -1,0 +1,32 @@
+﻿@page "/login"
+@using UniversityBlogApp.Client.Models
+@using UniversityBlogApp.Client.Services
+@inject AuthService AuthService
+@inject NavigationManager Nav
+
+<h3>Login</h3>
+
+<EditForm Model="@login" OnValidSubmit="SubmitLogin">
+    <InputText @bind-Value="login.Email" placeholder="Email" class="form-control" />
+    <InputText @bind-Value="login.Password" placeholder="Password" type="password" class="form-control" />
+    <button class="btn btn-primary" type="submit">Login</button>
+</EditForm>
+
+@if (error != null)
+{
+    <div class="text-danger">@error</div>
+}
+
+@code {
+    private LoginDto login = new();
+    private string? error;
+
+    private async Task SubmitLogin()
+    {
+        var token = await AuthService.Login(login);
+        if (!string.IsNullOrEmpty(token))
+            Nav.NavigateTo("/dashboard");
+        else
+            error = "Invalid credentials.";
+    }
+}
