@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "Auth\Auth.csproj", "{3E95AB61-4325-4A32-8B61-874C6F3BB2DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityBlogApp.Client", "UniversityBlogApp.Client\UniversityBlogApp.Client.csproj", "{BF195E34-2512-430A-94ED-4BF1D1926834}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +127,18 @@ Global
 		{3E95AB61-4325-4A32-8B61-874C6F3BB2DE}.Release|x64.Build.0 = Release|Any CPU
 		{3E95AB61-4325-4A32-8B61-874C6F3BB2DE}.Release|x86.ActiveCfg = Release|Any CPU
 		{3E95AB61-4325-4A32-8B61-874C6F3BB2DE}.Release|x86.Build.0 = Release|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Debug|x64.Build.0 = Debug|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Debug|x86.Build.0 = Debug|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Release|x64.ActiveCfg = Release|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Release|x64.Build.0 = Release|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Release|x86.ActiveCfg = Release|Any CPU
+		{BF195E34-2512-430A-94ED-4BF1D1926834}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
