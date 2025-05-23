@@ -5,12 +5,14 @@ namespace UniversityBlogApp.Client.Services
 {
     public class AuthService
     {
+        private readonly CustomAuthenticationStateProvider _authStateProvider;
         private readonly HttpClient _http;
         private string? _token;
 
-        public AuthService(HttpClient http)
+        public AuthService(HttpClient http, CustomAuthenticationStateProvider authStateProvider)
         {
             _http = http;
+            _authStateProvider = authStateProvider;
         }
 
         public async Task<string?> Login(LoginDto dto)
@@ -22,6 +24,9 @@ namespace UniversityBlogApp.Client.Services
             var json = await res.Content.ReadAsStringAsync();
             var doc = JsonDocument.Parse(json);
             _token = doc.RootElement.GetProperty("token").GetString();
+
+            _authStateProvider.NotifyAuthenticationStateChanged(); // 🔐 Notify system
+
             return _token;
         }
 
